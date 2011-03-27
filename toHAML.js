@@ -11,7 +11,7 @@ function toHAML(node){
 			nodeName += '.';
 			nodeName += node.className.split(' ').join('.');
 		}
-		if ( nodeName.length === 0 || node.nodeName !== 'div') {
+		if ( nodeName.length === 0 || node.nodeName !== 'DIV') {
 			nodeName = '%' + node.nodeName.toLowerCase() + nodeName;
 		}
 		haml.push(nodeName);
