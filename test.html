@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+	<title>node-to-jquery-haml Demo</title>
+	<style type="text/css" media="screen">
+		body{
+			font: 12px Helvetica, sans-serif;
+		}
+		#output{
+			background: #eee;
+		}
+		body>h1{
+			border-bottom: 4px solid #ccc;
+			padding-bottom: 2px;
+		}
+		#loginBox{
+			background: #eee;
+			padding: 10px;
+			font-size: 0.8em;
+		}
+	</style>
+</head>
+<body>
+<h1>HTML&hellip;</h1>
+<div id="loginBox">
+	<h1>Log In</h1>
+	<form>
+		<input type="text" name="email" placeholder="Email Address">
+		<input type="password" name="password" placeholder="Password">
+		<p>
+			<button>Log In</button>
+			<input type="checkbox" name="remember_me" id="login_remember_me"> <label for="login_remember_me">Remember me</label>
+		</p>
+	</form>
+</div>
+<h1>&hellip;becomes jquery-haml!</h1>
+<pre id="output"></pre>
+<script src="toHAML.js"></script>
+<script>
+	document.getElementById('output').appendChild(document.createTextNode(
+		JSON.stringify(toHAML(document.getElementById('loginBox')), null, ' ')
+	));
+</script>
